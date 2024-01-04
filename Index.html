@@ -3,24 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
     <link rel="stylesheet" href="styles.css" />
-    <title>Seu Nome - Portfólio</title>
+    <title>VHMS - Portfólio</title>
   </head>
-
+  <!-- -------------------------------------------------------------------------------- -->
   <body>
-    <!--  -->
+    <!-- ------------------------------------------------------------------------------ -->
     <nav class="nav body__item">
       <section class="nav__item">
         <div class="nav__image">
           <img class="nav__image-logo" src="assets/logo-vhms-black.svg" />
         </div>
-        <div class="nav__buttons">
-          <button class="nav__btn nav__btn--activate" id="language_BR">PT-BR</button>
-          <button class="nav__btn nav__btn--disabled" id="language_US">EN-US</button>
+        <div class="nav__btn">
+          <button class="btn__action" id="language_BR">PT-BR</button>
+          <button class="btn__action btn__action--off" id="language_US">EN-US</button>
         </div>
       </section>
       <section class="nav__item">
@@ -35,7 +31,7 @@
           </li>
           <li class="nav__line">
             <span class="nav__rect"></span>
-            <a class="nav__anchor" href="#about">Sobre</a>
+            <a class="nav__anchor" href="#idAbout">Sobre</a>
           </li>
           <li class="nav__line">
             <span class="nav__rect"></span>
@@ -44,7 +40,7 @@
         </ul>
       </section>
     </nav>
-    <!--  -->
+    <!-- ------------------------------------------------------------------------------ -->
     <br id="home" />
     <section class="c-home">
       <div class="c-home__item">
@@ -165,97 +161,252 @@
       </div>
       <span class="c-home__shape"></span>
     </section>
-    <!--  -->
-    <br id="portfolio" />
+    <!-- ------------------------------------------------------------------------------ -->
+    <section id="portfolio" class="c-portifolio">
+      <h2 class="c-portifolio__title">Portifolio</h2>
+      <ul class="c-portifolio__list">
+        <div class="btn">
+          <button class="btn__action btn__project" id="portifolio_main">Principais</button>
+        </div>
+        <li class="c-portifolio__line">
+          <button class="btn__action btn__action--off btn__project" id="portifolio_all">
+            Todos
+          </button>
+        </li>
+        <li class="c-portifolio__line">
+          <button class="btn__action btn__action--off btn__project" id="language_BR">Design</button>
+        </li>
+        <li class="c-portifolio__line">
+          <button class="btn__action btn__action--off btn__project" id="language_BR">
+            Desenhos
+          </button>
+        </li>
+        <li class="c-portifolio__line">
+          <button class="btn__action btn__action--off btn__project" id="language_BR">Sites</button>
+        </li>
+      </ul>
+    </section>
+    <!-- ------------------------------------------------------------------------------ -->
     <main class="main body__item">
-      <section class="title">
-        <span class="title__icon material-symbols-outlined"> grid_view </span>
-        <h2 class="title__text">Principais Projetos</h2>
+      <section class="project">
+        <img
+          class="project__image"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
+        />
+        <button class="project__link" onclick="window.location.reload()"></button>
+        <div class="project__container">
+          <div class="project__header">
+            <p class="project__text project__text--date">2023</p>
+            <p class="project__text project__text--title">Freljord Battle</p>
+          </div>
+          <ul class="project__list">
+            <li class="project__list-line">Image Tratament</li>
+            <li class="project__list-line">Composition</li>
+          </ul>
+        </div>
       </section>
-
-      <section class="portfolio__projects">
-        <div class="project">
-          <img
-            class="project__image"
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
-          />
-          <button class="project__link" onclick="window.location.reload()"></button>
-          <div class="project__container">
-            <div class="project__header">
-              <p class="project__text project__text--date">2023</p>
-              <p class="project__text project__text--title">Freljord Battle</p>
-            </div>
-            <ul class="project__list">
-              <li class="project__list-line">Image Tratament</li>
-              <li class="project__list-line">Composition</li>
-            </ul>
+      <section class="project project--center">
+        <img
+          class="project__image"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
+        />
+        <button class="project__link" onclick="window.location.reload()"></button>
+        <div class="project__container">
+          <div class="project__header">
+            <p class="project__text project__text--date">2023</p>
+            <p class="project__text project__text--title">Freljord Battle</p>
           </div>
+          <ul class="project__list">
+            <li class="project__list-line">Image Tratament</li>
+            <li class="project__list-line">Composition</li>
+          </ul>
         </div>
-        <div class="project">
-          <img
-            class="project__image"
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
-          />
-          <button class="project__link" onclick="window.location.reload()"></button>
-          <div class="project__container">
-            <div class="project__header">
-              <p class="project__text project__text--date">2023</p>
-              <p class="project__text project__text--title">Freljord Battle</p>
-            </div>
-            <ul class="project__list">
-              <li class="project__list-line">Image Tratament</li>
-              <li class="project__list-line">Composition</li>
-            </ul>
+      </section>
+      <section class="project">
+        <img
+          class="project__image"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
+        />
+        <button class="project__link" onclick="window.location.reload()"></button>
+        <div class="project__container">
+          <div class="project__header">
+            <p class="project__text project__text--date">2023</p>
+            <p class="project__text project__text--title">Freljord Battle</p>
           </div>
+          <ul class="project__list">
+            <li class="project__list-line">Image Tratament</li>
+            <li class="project__list-line">Composition</li>
+          </ul>
         </div>
-        <div class="project">
-          <img
-            class="project__image"
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
-          />
-          <button class="project__link" onclick="window.location.reload()"></button>
-          <div class="project__container">
-            <div class="project__header">
-              <p class="project__text project__text--date">2023</p>
-              <p class="project__text project__text--title">Freljord Battle</p>
-            </div>
-            <ul class="project__list">
-              <li class="project__list-line">Image Tratament</li>
-              <li class="project__list-line">Composition</li>
-            </ul>
+      </section>
+      <section class="project">
+        <img
+          class="project__image"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
+        />
+        <button class="project__link" onclick="window.location.reload()"></button>
+        <div class="project__container">
+          <div class="project__header">
+            <p class="project__text project__text--date">2023</p>
+            <p class="project__text project__text--title">Freljord Battle</p>
           </div>
+          <ul class="project__list">
+            <li class="project__list-line">Image Tratament</li>
+            <li class="project__list-line">Composition</li>
+          </ul>
         </div>
-        <div class="project">
-          <img
-            class="project__image"
-            src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
-          />
-          <button class="project__link" onclick="window.location.reload()"></button>
-          <div class="project__container">
-            <div class="project__header">
-              <p class="project__text project__text--date">2023</p>
-              <p class="project__text project__text--title">Freljord Battle</p>
-            </div>
-            <ul class="project__list">
-              <li class="project__list-line">Image Tratament</li>
-              <li class="project__list-line">Composition</li>
-            </ul>
+      </section>
+      <section class="project project--center">
+        <img
+          class="project__image"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
+        />
+        <button class="project__link" onclick="window.location.reload()"></button>
+        <div class="project__container">
+          <div class="project__header">
+            <p class="project__text project__text--date">2023</p>
+            <p class="project__text project__text--title">Freljord Battle</p>
           </div>
+          <ul class="project__list">
+            <li class="project__list-line">Image Tratament</li>
+            <li class="project__list-line">Composition</li>
+          </ul>
+        </div>
+      </section>
+      <section class="project">
+        <img
+          class="project__image"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png"
+        />
+        <button class="project__link" onclick="window.location.reload()"></button>
+        <div class="project__container">
+          <div class="project__header">
+            <p class="project__text project__text--date">2023</p>
+            <p class="project__text project__text--title">Freljord Battle</p>
+          </div>
+          <ul class="project__list">
+            <li class="project__list-line">Image Tratament</li>
+            <li class="project__list-line">Composition</li>
+          </ul>
         </div>
       </section>
     </main>
-    <br id="about" />
-
-    <br id="contact" />
-    <section class="body__item">
-      <h2 class="title">Entre em Contato</h2>
-      <!-- Adicione um formulário de contato aqui -->
+    <!-- ------------------------------------------------------------------------------ -->
+    <section class="about" id="idAbout">
+      <div class="about__item">
+        <div class="about__head">
+          <h2 class="about__title">Sobre</h2>
+          <p class="about__text">Conheça um pouco mais sobre o vosso host</p>
+        </div>
+        <!---->
+        <section class="about__main">
+          <div class="about__main-item">
+            <img class="about__profile" src="assets/logo-vhms-black.svg" />
+            <p class="about__text">São Paulo SP</p>
+            <p class="about__text">Brasil</p>
+          </div>
+          <div class="about__main-item">
+            <p class="about__text">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde adipisci nisi esse
+              aspernatur molestiae nostrum cupiditate corrupti nemo, et dignissimos quod voluptas
+              assumenda eligendi? Dolore, iste excepturi. Velit, blanditiis minima!
+            </p>
+          </div>
+        </section>
+        <!---->
+        <section class="about__footer">
+          <div class="about__skills">
+            <p class="about__label">HARD SKILLS</p>
+            <div class="about__skills-item">
+              <ul class="about__list">
+                <li class="about__text">Item</li>
+                <li class="about__text">Item2</li>
+                <li class="about__text">Item3</li>
+                <li class="about__text">Item4</li>
+                <li class="about__text">Item5</li>
+                <li class="about__text">Item6</li>
+              </ul>
+              <ul class="about__list">
+                <li class="about__text">Item</li>
+                <li class="about__text">Item2</li>
+                <li class="about__text">Item3</li>
+                <li class="about__text">Item4</li>
+              </ul>
+            </div>
+          </div>
+          <div class="about__skills">
+            <p class="about__label">SOFT SKILLS</p>
+            <ul class="about__list">
+              <li class="about__text">Item</li>
+              <li class="about__text">Item2</li>
+              <li class="about__text">Item3</li>
+              <li class="about__text">Item4</li>
+              <li class="about__text">Item5</li>
+              <li class="about__text">Item6</li>
+            </ul>
+          </div>
+          <div class="about__tools">
+            <p class="about__label">Ferramentas Favoritas</p>
+            <div class="about__tools-item">
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+              <img class="about__icon" src="assets/logo-vhms-black.svg" />
+            </div>
+          </div>
+        </section>
+      </div>
     </section>
+    <!-- ------------------------------------------------------------------------------ -->
+    <br id="contact" />
+    <section class="contact body__item">
+      <div class="contact__head">
+        <h2 class="title">Entre em Contato</h2>
+        <p class="contact__text">Curtiu o meu trabalho? Entre em contato comigo!</p>
+        <div class="contact__item">
+          <a href="#"><img class="contact__icon" src="assets/logo-vhms-black.svg" /></a>
+          <a href="#"><img class="contact__icon" src="assets/logo-vhms-black.svg" /></a>
+          <a href="#"><img class="contact__icon" src="assets/logo-vhms-black.svg" /></a>
+        </div>
+      </div>
+      <form class="contact__form">
+        <label class="contact__label" for="idFormName">Nome:</label>
+        <input class="contact__input" id="idFormName" type="text" placeholder="Insira o seu nome" />
+        <label class="contact__label" for="idFormEmail">Email:</label>
+        <input
+          class="contact__input"
+          id="idFormEmail"
+          type="email"
+          placeholder="Insira o seu e-mail"
+        />
 
+        <label class="contact__label" for="idFormText">Texto:</label>
+        <textarea
+          class="contact__input"
+          id="idFormText"
+          rows="5"
+          cols="33"
+          placeholder="Default Text Here"
+        ></textarea>
+
+        <button class="contact__btn"></button>
+      </form>
+    </section>
+    <!-- ------------------------------------------------------------------------------ -->
     <footer>
-      <p>&copy; 2023 Seu Nome. Todos os direitos reservados.</p>
+      <p>&copy; 2023 Victor VHMS. Todos os direitos reservados.</p>
     </footer>
-
+    <!-- ------------------------------------------------------------------------------ -->
     <script src="script.js"></script>
   </body>
 </html>
