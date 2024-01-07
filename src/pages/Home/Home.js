@@ -7,6 +7,7 @@ import Project from "../../components/Project/Project";
 // Import CSS
 import "../..//sharedStyles/sharedStyles.css";
 import "./Home.css";
+
 const Home = () => {
   const { language } = useLanguage();
   //
@@ -115,16 +116,16 @@ const Home = () => {
   const projectsData = [
     {
       thumb:
-        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png",
+        "https://mir-s3-cdn-cf.behance.net/projects/808/a46efe182841405.Y3JvcCw4MDgsNjMyLDAsMA.png",
       title: "Projeto 1",
       date: "2023",
       page: "/link-da-pagina",
       category: { firstItem: "Categoria 1", secondItem: "Categoria 2" },
-      type: "Popular, Design",
+      type: "Popular, Design, Site",
     },
     {
       thumb:
-        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png",
+        "https://mir-s3-cdn-cf.behance.net/projects/808/9edf76164666485.Y3JvcCw0MDQzLDMxNjIsMCww.jpg",
       title: "Projeto 2",
       date: "2023",
       page: "/link-da-pagina",
@@ -142,12 +143,12 @@ const Home = () => {
     },
     {
       thumb:
-        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png",
+        "https://mir-s3-cdn-cf.behance.net/projects/808/9d28f5161913209.Y3JvcCwxNDA3LDExMDAsMCww.png",
       title: "Projeto 4",
       date: "2023",
       page: "/link-da-pagina",
       category: { firstItem: "Categoria 1", secondItem: "Categoria 2" },
-      type: "Popular, Design",
+      type: "Popular, Draw",
     },
     {
       thumb: "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/04/dota-3-logo.jpg",
@@ -155,16 +156,16 @@ const Home = () => {
       date: "2023",
       page: "/link-da-pagina",
       category: { firstItem: "Categoria 1", secondItem: "Categoria 2" },
-      type: "Popular",
+      type: "",
     },
     {
       thumb:
-        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/ce9116162440939.63d5d628d97de.png",
+        "https://mir-s3-cdn-cf.behance.net/projects/808/c48d7c161924613.Y3JvcCwxNDA3LDExMDAsMCww.png",
       title: "Projeto 6",
       date: "2023",
       page: "/link-da-pagina",
       category: { firstItem: "Categoria 1", secondItem: "Categoria 2" },
-      type: "Popular, Design",
+      type: "Popular, Draw",
     },
   ];
   //
@@ -198,6 +199,7 @@ const Home = () => {
       setFilteredProjectsClass(addClass ? "exited" : "");
     }
   };
+  //
   //
   useEffect(() => {
     var shapeElement = document.querySelector(".c-home__shape");
@@ -233,9 +235,18 @@ const Home = () => {
       }, 500);
     });
     //
+    const typeBtns = document.querySelectorAll(".btn__action");
+
+    typeBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        typeBtns.forEach((otherBtn) => {
+          otherBtn.classList.add("btn__action--off");
+        });
+        btn.classList.remove("btn__action--off");
+      });
+    });
     //
     const timeoutId = setTimeout(() => setExitProjectIndex(null), 500);
-
     // Limpar o timeout ao desmontar o componente ou ao mudar os projetos filtrados
     return () => clearTimeout(timeoutId);
   }, [exitProjectIndex, filteredProjects]);
@@ -319,7 +330,7 @@ const Home = () => {
           <button
             className="btn__action btn__action--smaller btn__action--off "
             id="btnSites"
-            onClick={() => filterProjects("Sites", true, false)}
+            onClick={() => filterProjects("Site", true, false)}
           >
             Sites
           </button>

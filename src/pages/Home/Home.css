@@ -60,13 +60,15 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 120px 0px;
+  margin: 120px 0px 50px;
 }
 
 .main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0px auto;
+  min-height: 720px;
+  padding: 0px 0px 100px;
 }
 
 /* Add these CSS styles */

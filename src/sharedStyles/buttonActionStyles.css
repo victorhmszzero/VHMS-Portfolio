@@ -11,29 +11,30 @@
   transition: background-color 0.3s ease;
 }
 
-.btn__action:hover::before {
-  left: 0;
-  width: 100%;
-}
-
 .btn__action--off::before {
   position: absolute;
   bottom: 0;
   left: 50%;
   border: none;
   background-color: black;
-  width: 0px;
+  width: 0;
   height: 3px;
-  content: "a";
-  color: rgba(0, 0, 0, 0);
+  content: "";
   transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%); /* Adiciona este trecho para centralizar o pseudo-elemento */
+}
+
+.btn__action--off:hover::before {
+  width: 100%;
 }
 
 .btn__action--off {
   color: rgba(0, 0, 0, 0.3);
+}
+.btn__action--off:hover {
+  color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
-
 .btn__action--smaller {
   font-size: 18px;
   font-weight: 400;
