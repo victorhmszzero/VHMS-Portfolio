@@ -1,0 +1,97 @@
+.c-home {
+  position: relative;
+  margin-top: 50px;
+  padding-bottom: 120px;
+}
+
+.c-home__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.c-home__icons {
+  display: flex;
+  justify-content: center;
+  height: 57px;
+  cursor: pointer;
+}
+
+.c-home__shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  width: 267px;
+  height: 1px;
+  transition: left 200ms ease;
+  transform-origin: center;
+}
+
+@keyframes bounceWidth {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    width: 267px;
+    transform: translateX(0);
+  }
+
+  40% {
+    width: 300px;
+    transform: translateX(-15px);
+  }
+
+  60% {
+    width: 250px;
+    transform: translateX(15px);
+  }
+}
+
+.c-home__shape.in-motion {
+  animation: bounceWidth 0.8s ease infinite;
+}
+
+.c-portifolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 120px 0px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0px auto;
+}
+
+/* Add these CSS styles */
+.project-container {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add this line */
+}
+
+.project-container.exiting {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.project-container.exited {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.project-container.entering {
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.project-container.entered {
+  opacity: 1;
+  transform: scale(1);
+}

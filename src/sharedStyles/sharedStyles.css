@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0cqmax;
+  font-family: "Montserrat", sans-serif;
+}
+header {
+  display: flex;
+  justify-content: center;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text {
+  font-size: 18px;
+}
+
+.title {
+  font-size: 46px;
+  font-weight: bolder;
+  font-variant: small-caps;
+  text-transform: uppercase;
+}
+.title--bigger {
+  font-size: 72px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.text--small {
+  font-size: 16px;
+}
+
+.body__item {
+  width: 90%;
+  max-width: 1190px;
+}

@@ -1,0 +1,90 @@
+.project {
+  position: relative;
+  margin-top: 8px;
+  border-radius: 5px;
+  width: 380.935px;
+  height: 320.264px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.project--center {
+  margin-top: 58px;
+}
+
+.project__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project__link:hover {
+  cursor: pointer;
+}
+
+.project__container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  align-items: end;
+  padding: 25px;
+  opacity: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  width: 100%;
+  height: 50%;
+  color: white;
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.project:hover .project__container {
+  opacity: 1;
+}
+
+.project__header {
+  width: 100%;
+  text-align: left;
+}
+
+.project__text {
+  margin: 0;
+}
+
+.project__text--title {
+  font-size: xx-large;
+}
+
+.project__text--date {
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.project__list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: larger;
+  list-style: none;
+  text-align: right;
+}
+
+.project__list-line {
+  margin: 5px 0px;
+}
+
+.project__image {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.project:hover .project__image {
+  transform: scale(1);
+}

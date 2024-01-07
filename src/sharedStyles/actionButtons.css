@@ -1,0 +1,40 @@
+.btn__action {
+  position: relative;
+  margin: 0px 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  width: fit-content;
+  color: #000;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn__action:hover::before {
+  left: 0;
+  width: 100%;
+}
+
+.btn__action--off::before {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border: none;
+  background-color: black;
+  width: 0px;
+  height: 3px;
+  content: "a";
+  color: rgba(0, 0, 0, 0);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.btn__action--off {
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.btn__action--smaller {
+  font-size: 18px;
+  font-weight: 400;
+}
