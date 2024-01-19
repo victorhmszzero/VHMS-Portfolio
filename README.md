@@ -1,4 +1,5 @@
 <div align="center">
+<img src="assets/VhmsLogo.png" width ="150px" alt="logo">
 
 # VHMS Portfólio
 
