@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./sharedStyles/sharedStyles.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { LanguageProvider } from "./sharedScripts/LanguageContext";
+import { LanguageProvider } from "./utils/languageUtils.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

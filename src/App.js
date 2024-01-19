@@ -1,5 +1,5 @@
 import Nav from "./components/Nav/Nav";
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home/home";
 import "./sharedStyles/sharedStyles.css";
 
 function App() {
