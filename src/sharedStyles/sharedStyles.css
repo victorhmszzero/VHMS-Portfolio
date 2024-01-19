@@ -3,10 +3,12 @@
   padding: 0cqmax;
   font-family: "Montserrat", sans-serif;
 }
+
 header {
   display: flex;
   justify-content: center;
 }
+
 body {
   display: flex;
   flex-direction: column;
@@ -23,6 +25,7 @@ body {
   font-variant: small-caps;
   text-transform: uppercase;
 }
+
 .title--bigger {
   font-size: 72px;
   font-weight: 600;
