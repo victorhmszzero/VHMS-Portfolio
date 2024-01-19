@@ -21,7 +21,7 @@
   height: 3px;
   content: "";
   transition: width 0.3s ease, left 0.3s ease;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Adiciona este trecho para centralizar o pseudo-elemento */
 }
 
 .btn__action--off:hover::before {
@@ -31,12 +31,10 @@
 .btn__action--off {
   color: rgba(0, 0, 0, 0.3);
 }
-
 .btn__action--off:hover {
   color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
-
 .btn__action--smaller {
   font-size: 18px;
   font-weight: 400;

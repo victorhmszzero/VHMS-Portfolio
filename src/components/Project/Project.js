@@ -4,8 +4,10 @@ import "./Project.css";
 
 const Project = ({ key, thumb, title, date, category, page, center }) => {
   const containerClasses = ["project"];
-  center && containerClasses.push("project--center");
 
+  if (center === true) {
+    containerClasses.push("project--center");
+  }
   return (
     <div className={containerClasses.join(" ")}>
       <img className="project__image" src={thumb} />

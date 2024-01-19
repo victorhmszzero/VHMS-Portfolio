@@ -1,52 +1,89 @@
-// Import libraries
 import React, { useEffect } from "react";
-
-// Import styles
 import "../../sharedStyles/sharedStyles.css";
+import "../../sharedStyles/actionButtons.css";
 import "./Nav.css";
+import vhms_black_logo from "../../sharedAssets/logo-vhms-black.svg";
 
-// Impor assets
-import blackLogo from "../../assets/logo-vhms-black.svg";
-
-// Import hooks
-import ButtonAction from "../../hooks/buttonAction/buttonAction.js";
-
-// Import utils
-import { useLanguage, useLanguageTexts } from "../../utils/languageUtils.js";
+import { useLanguage } from "../../sharedScripts/LanguageContext";
 
 const Nav = () => {
-  // Imports
-  ButtonAction(".btn__action--language");
   const { language, switchLanguage } = useLanguage();
-  //
+
+  // Empty dependency array means this effect will run once after the initial render
   useEffect(() => {
-    const [handleClickPTBR, handleClickENUS] = changeLanguage(language, switchLanguage);
-    const navCleanup = navInteraction();
+    function navButtons() {
+      const navAnchors = document.querySelectorAll(".nav__line");
+      const defaultAnchor = document.getElementById("default-achor");
 
-    const btnPTBR = document.getElementById("idPTBR");
-    const btnEnUS = document.getElementById("idENUS");
+      const handleMouseEnter = (anchor) => {
+        if (anchor !== defaultAnchor) {
+          navAnchors.forEach((otherAnchor) => {
+            otherAnchor.classList.remove("nav__line--activate");
+          });
+        }
+      };
 
-    btnPTBR.addEventListener("click", handleClickPTBR);
-    btnEnUS.addEventListener("click", handleClickENUS);
+      const handleMouseClick = () => {
+        navAnchors.forEach((otherAnchor) => {
+          otherAnchor.classList.remove("nav__line--activate");
+        });
+      };
 
-    return () => {
-      navCleanup();
-      btnPTBR.removeEventListener("click", handleClickPTBR);
-      btnEnUS.removeEventListener("click", handleClickENUS);
-    };
+      navAnchors.forEach((anchor) => {
+        anchor.addEventListener("mouseenter", () => handleMouseEnter(anchor));
+        anchor.addEventListener("click", handleMouseClick);
+      });
+
+      const handleMouseLeave = () => {
+        if (defaultAnchor) {
+          defaultAnchor.classList.add("nav__line--activate");
+        }
+      };
+
+      document.querySelector(".nav__list").addEventListener("mouseleave", handleMouseLeave);
+
+      // Cleanup function
+      return () => {
+        navAnchors.forEach((anchor) => {
+          anchor.removeEventListener("mouseenter", () => handleMouseEnter(anchor));
+          anchor.removeEventListener("click", handleMouseClick);
+        });
+
+        document.querySelector(".nav__list").removeEventListener("mouseleave", handleMouseLeave);
+      };
+    }
+    navButtons();
+    const elementENUS = document.getElementById("idENUS");
+    const elementPTBR = document.getElementById("idPTBR");
+
+    elementPTBR.addEventListener("click", function () {
+      if (language !== "pt-br") {
+        switchLanguage("pt-br");
+        elementPTBR.classList.remove("btn__action--off");
+        elementENUS.classList.add("btn__action--off");
+      }
+    });
+
+    elementENUS.addEventListener("click", function () {
+      if (language !== "en-us") {
+        switchLanguage("en-us");
+        elementENUS.classList.remove("btn__action--off");
+        elementPTBR.classList.add("btn__action--off");
+      }
+    });
   }, [language, switchLanguage]);
-  //
+
   return (
     <nav className="nav body__item">
       <section className="nav__item">
         <div className="nav__image">
-          <img className="nav__image-logo" src={blackLogo} alt="logo" />
+          <img className="nav__image-logo" src={vhms_black_logo} alt="logo" />
         </div>
         <div className="nav__buttons">
-          <button className="btn__action--language btn__action" id="idPTBR">
+          <button className="btn__action" id="idPTBR">
             PT-BR
           </button>
-          <button className="btn__action--language btn__action btn__action--off" id="idENUS">
+          <button className="btn__action btn__action--off" id="idENUS">
             EN-US
           </button>
         </div>
@@ -82,59 +119,5 @@ const Nav = () => {
     </nav>
   );
 };
-//
-function navInteraction() {
-  const navAnchors = document.querySelectorAll(".nav__line");
-  const defaultAnchor = document.getElementById("default-achor");
 
-  const handleMouseLeave = () => {
-    if (defaultAnchor) {
-      defaultAnchor.classList.add("nav__line--activate");
-    }
-  };
-
-  const handleMouseEnter = (anchor) => {
-    if (anchor !== defaultAnchor) {
-      navAnchors.forEach((otherAnchor) => {
-        otherAnchor.classList.remove("nav__line--activate");
-      });
-    }
-  };
-  const handleMouseClick = () => {
-    navAnchors.forEach((otherAnchor) => {
-      otherAnchor.classList.remove("nav__line--activate");
-    });
-  };
-
-  navAnchors.forEach((anchor) => {
-    anchor.addEventListener("mouseenter", () => handleMouseEnter(anchor));
-    anchor.addEventListener("click", handleMouseClick);
-  });
-  document.querySelector(".nav__list").addEventListener("mouseleave", handleMouseLeave);
-
-  return () => {
-    navAnchors.forEach((anchor) => {
-      anchor.removeEventListener("mouseenter", () => handleMouseEnter(anchor));
-      anchor.removeEventListener("click", handleMouseClick);
-    });
-    document.querySelector(".nav__list").removeEventListener("mouseleave", handleMouseLeave);
-  };
-}
-
-function changeLanguage(currentLanguage, changeFunction) {
-  const handleClickPTBR = () => {
-    if (currentLanguage !== "pt-br") {
-      changeFunction("pt-br");
-    }
-  };
-
-  const handleClickENUS = () => {
-    if (currentLanguage !== "en-us") {
-      changeFunction("en-us");
-    }
-  };
-
-  return [handleClickPTBR, handleClickENUS];
-}
-//
 export default Nav;

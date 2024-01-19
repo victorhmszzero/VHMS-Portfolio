@@ -67,30 +67,30 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0px auto;
-  padding: 0px 0px 100px;
   min-height: 720px;
+  padding: 0px 0px 100px;
 }
 
 /* Add these CSS styles */
 .project-container {
   opacity: 1;
   transform: scale(1);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add this line */
 }
 
 .project-container.exiting {
-  opacity: 0;
   transform: scale(0.8);
+  opacity: 0;
 }
 
 .project-container.exited {
-  opacity: 0;
   transform: scale(0.8);
+  opacity: 0;
 }
 
 .project-container.entering {
-  opacity: 0;
   transform: scale(0.8);
+  opacity: 0;
 }
 
 .project-container.entered {
