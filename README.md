@@ -36,4 +36,4 @@ Agradeço por dedicarem tempo à exploração do meu projeto de portfólio em de
 
 Estou ansioso para compartilhar mais sobre mim. Em caso de dúvidas ou sugestões, não hesite em entrar em contato :D
 
-[Linktree](linktree)
+[![Linktree](https://img.shields.io/badge/linktree-1de9b6?style=for-the-badge&logo=linktree&logoColor=white)](https://linktr.ee/victor_vhms)
